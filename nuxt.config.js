@@ -24,10 +24,16 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    {
+      src: '~/node_modules/highlight.js/styles/tomorrow-night-bright.css',
+      lang: 'css'
+
+    }
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+      '@/plugins/vue-highlightjs'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -41,13 +47,20 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+      'nuxt-webfontloader'
   ],
+
+  webfontloader: {
+    google: {
+      families: ['Noto+Sans:400,700', 'Noto+Sans+JP:400,700', 'Source+Code+Pro']
+    }
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
+      dark: false,
       themes: {
         dark: {
           primary: colors.blue.darken2,
